@@ -9,10 +9,10 @@ Pre-requisite:
 To Run
 1. Unzip the files(if compressed)
 2. Go to top level directory of the project (wordCount) - you should see "src", "gradlew" here.
-3. Execute this command in commandline ./gradlew (for bash or .\gradlew.bat for windows) --refresh-dependencies - To refresh all dependencies
-4. Execute this command in commandline ./gradlew (for bash or .\gradlew.bat for windows) test - To run the tests
+3. Execute this command in bash command line ./gradlew --refresh-dependencies - To refresh all dependencies
+4. Execute this command in bash command line ./gradlew test - To run the tests
 
-NB: If using Windows commandline .\gradlew.bat will be more appropriate
+NB: If using Windows command line, .\gradlew should be replaced with .\gradlew.bat
 
 *******************
  See Test Report
