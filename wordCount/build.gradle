@@ -1,0 +1,33 @@
+
+
+apply plugin: 'java-library'
+
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.4'
+}
+
+test {
+		testLogging {
+		events TestLogEvent.FAILED,
+              	TestLogEvent.PASSED,
+               	TestLogEvent.SKIPPED,
+               	TestLogEvent.STANDARD_ERROR,
+               	TestLogEvent.STANDARD_OUT
+        exceptionFormat TestExceptionFormat.FULL
+        showCauses true
+        showExceptions true
+        showStackTraces true
+        
+        }
+        
+    }
+
