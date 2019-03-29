@@ -13,13 +13,9 @@ pipeline {
         steps {
           
           withCredentials([usernamePassword(credentialsId: 'restEndpoint', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-        sh returnStdout: true, script: '''curl -X -v POST \\
-        https://restful-booker.herokuapp.com/auth \\
-        -H \'Content-Type: application/json\' \\
-        -d \'{
-        "username" : "$USERNAME",
-        "password" : "$PASSWORD"
-        }\''''
+        sh returnStdout: true, script: '''
+        curl -X -v POST https://restful-booker.herokuapp.com/auth -H "Content-Type: application/json" -d "{ "username" : $USERNAME, "password" : $PASSWORD}"
+        '''
       }
     }
 }
