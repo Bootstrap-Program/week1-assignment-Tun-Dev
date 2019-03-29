@@ -17,8 +17,8 @@ pipeline {
         https://restful-booker.herokuapp.com/auth \\
         -H \'Content-Type: application/json\' \\
         -d \'{
-        "username" : $USERNAME,
-        "password" : $PASSWORD
+        "username" : "$USERNAME",
+        "password" : "$PASSWORD"
         }\''''
       }
     }
