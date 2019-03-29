@@ -10,5 +10,29 @@ pipeline {
           sh returnStdout: true, script: 'cd wordCount && ls -la && chmod +x gradlew && ./gradlew --refresh-dependencies &&  ./gradlew test'
         }
       }
+      stage('Creds') {
+        steps {
+          
+          withCredentials([usernamePassword(credentialsId: 'restEndpoint', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+        sh returnStdout: true, script: '''curl -X -v POST \\
+        https://restful-booker.herokuapp.com/auth \\
+        -H \'Content-Type: application/json\' \\
+        -d \'{
+        "username" : $USERNAME,
+        "password" : $PASSWORD
+        }\''''
+
+}
+      stage('GradleProp') {
+        steps {
+          withCredentials([usernamePassword(credentialsId: 'restEndpoint', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+            sh returnStdout: true, script: 'cd wordCount && ls -la && chmod +x gradlew &&  ./gradlew test -D$USERNAME -P$PASSWORD
+          }
+        }
+      }
+          
+        }
+      }
+      
     }
 }
