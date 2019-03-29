@@ -71,5 +71,11 @@ public class WordCountTest {
 		assertFalse(mp.values().contains(ls));
 
 	}
+	
+	@Test
+  	public void testSafeCredential() {
+    		System.out.println("Username is " + System.getProperty("uName"));
+    		System.out.println("Passcode is " + System.getProperty("pswd"));
+  }
 
 }
