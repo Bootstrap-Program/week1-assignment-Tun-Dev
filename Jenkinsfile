@@ -7,7 +7,7 @@ pipeline {
                     doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], 
                     userRemoteConfigs: 
                     [[credentialsId: 'gitHubCreds', url: 'https://github.com/gideonaina/wordCount.git']]])
-          sh returnStdout: true, script: 'cd wordCount && ls -la && ./gradlew --refresh-dependencies &&  ./gradlew test'
+          sh returnStdout: true, script: 'cd wordCount && ls -la && chmod +x gradlew && ./gradlew --refresh-dependencies &&  ./gradlew test'
         }
       }
     }
