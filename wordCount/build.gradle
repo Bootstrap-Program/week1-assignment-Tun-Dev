@@ -15,7 +15,7 @@ dependencies {
     testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.4'
 }
 
-test {
+tasks.withType(Test) {
 
     //for -P
     systemProperty "uName", project.getProperty("uname")
