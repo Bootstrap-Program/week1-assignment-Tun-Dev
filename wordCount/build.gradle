@@ -16,6 +16,17 @@ dependencies {
 }
 
 test {
+
+    //for -P
+    systemProperty "uName", project.getProperty("uname")
+
+    //for -D
+    systemProperty "pswd", System.getProperty("pass")
+    
+    println "********Print Creds****************
+    println System.getProperty("pass")
+    println project.getProperty("uname")
+    
 		testLogging {
 		events TestLogEvent.FAILED,
               	TestLogEvent.PASSED,
@@ -30,17 +41,5 @@ test {
         }
         
     }
-    
-    task testcreds {
-    //for -P
-    systemProperty "uName", project.getProperty("uname")
-
-    //for -D
-    systemProperty "pswd", System.getProperty("pass")
-    
-    println "********Print Creds****************
-    println System.getProperty("pass")
-    println project.getProperty("uname")
-    
-    }
+   
 
