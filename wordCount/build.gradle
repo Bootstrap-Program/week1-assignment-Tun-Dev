@@ -23,7 +23,7 @@ test {
     //for -D
     systemProperty "pswd", System.getProperty("pass")
     
-    println "********Print Creds****************
+    println "********Print Creds****************"
     println System.getProperty("pass")
     println project.getProperty("uname")
     
