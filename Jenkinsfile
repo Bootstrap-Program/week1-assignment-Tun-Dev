@@ -26,7 +26,7 @@ pipeline {
       stage('GradleProp') {
         steps {
           withCredentials([usernamePassword(credentialsId: 'restEndpoint', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-            sh returnStdout: true, script: 'cd wordCount && ls -la && chmod +x gradlew &&  ./gradlew test -D$USERNAME -P$PASSWORD
+            sh returnStdout: true, script: 'cd wordCount && ls -la && chmod +x gradlew &&  ./gradlew testcreds -Puname=$USERNAME -Dpass=$PASSWORD
           }
         }
       }
