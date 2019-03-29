@@ -21,7 +21,8 @@ pipeline {
         "username" : $USERNAME,
         "password" : $PASSWORD
         }\''''
-
+      }
+    }
 }
       stage('GradleProp') {
         steps {
@@ -36,7 +37,4 @@ pipeline {
       }
           
         }
-      }
-      
-    }
 }
