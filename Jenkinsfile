@@ -1,7 +1,7 @@
 pipeline {
   agent { label 'linux' }
     stages {
-      stage('Test') {
+      stage('initial') {
         steps {
           checkout([$class: 'GitSCM', branches: [[name: '*/master']], 
                     doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], 
@@ -30,6 +30,17 @@ pipeline {
       }
     }
 }
-          
+
+      stage('Test') {
+        steps {
+
+          sh 'echo "***************CREDS*****************"'
+          withCredentials([usernamePassword(credentialsId: 'restEndpoint', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+            sh returnStdout: true, script: '''
+            cd wordCount && ls -la && chmod +x gradlew && ./gradlew --refresh-dependencies &&  ./gradlew test -Puname=$USERNAME -Dpass=$PASSWORD
+            '''
+          }
         }
+     }
+  }
 }
