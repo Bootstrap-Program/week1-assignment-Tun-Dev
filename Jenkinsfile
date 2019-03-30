@@ -34,8 +34,8 @@ pipeline {
         steps {
 
           sh 'echo "***************REPORT*****************"'
-           sh 'cd wordCount && ls -la build/reports/**'
-          sh 'cd wordCount && ls -la build/test-results/**'
+           sh 'cd wordCount && ls -la build/reports/tests/**'
+          //sh 'cd wordCount && ls -la build/test-results/**'
         }
      }
       
