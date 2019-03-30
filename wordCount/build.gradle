@@ -26,7 +26,8 @@ tasks.withType(Test) {
     
     println "********Print Creds****************"
     println System.getProperty("pass")
-    println project.getProperty("uname")
+    //println project.getProperty("uname")
+    println System.getProperty("uname")
     
 		testLogging {
 		events TestLogEvent.FAILED,
