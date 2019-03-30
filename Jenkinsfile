@@ -31,12 +31,10 @@ pipeline {
        stage('Report') {
         steps {
 
-          sh 'echo "***************TEST*****************"'
-          withCredentials([usernamePassword(credentialsId: 'restEndpoint', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-            sh returnStdout: true, script: '''
+          sh 'echo "***************REPORT*****************"'
+           sh returnStdout: true, script: '''
             cd wordCount && ls -la
             '''
-          }
         }
      }
       
