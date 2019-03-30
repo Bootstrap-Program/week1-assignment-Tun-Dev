@@ -16,7 +16,7 @@ pipeline {
         //sh returnStdout: true, script: '''
         //curl -X POST https://restful-booker.herokuapp.com/auth -H "Content-Type: application/json" -d \'{ "username" : $USERNAME, "password" : $PASSWORD}"}\'
         //'''
-      }
+      //}
     }
 }
 
