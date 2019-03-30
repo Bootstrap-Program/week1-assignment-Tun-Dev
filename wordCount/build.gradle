@@ -21,8 +21,8 @@ tasks.withType(Test) {
     //systemProperty "uName", project.getProperty("uname")
 
     //for -D
-    systemProperty "uName", System.getProperty("uname")
-    systemProperty "pswd", System.getProperty("pass")
+    //systemProperty "uName", System.getProperty("uname")
+    //systemProperty "pswd", System.getProperty("pass")
     
     println "********Print Creds****************"
     println System.getProperty("pass")
