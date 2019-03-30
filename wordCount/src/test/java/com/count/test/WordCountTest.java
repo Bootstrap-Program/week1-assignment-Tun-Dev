@@ -1,17 +1,15 @@
 package com.count.test;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertSame;
+import static org.testng.Assert.assertTrue;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import org.junit.Before;
-import org.junit.Test;
 
 
 import com.count.WordCount;
@@ -20,7 +18,7 @@ public class WordCountTest {
 	
 	WordCount wordCountObj;
 
-	@Before
+	@BeforeTest
 	public void setup() {
 		wordCountObj = new WordCount();
 	}
