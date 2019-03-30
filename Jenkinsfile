@@ -34,7 +34,6 @@ pipeline {
           sh 'echo "***************TEST*****************"'
           withCredentials([usernamePassword(credentialsId: 'restEndpoint', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
             sh returnStdout: true, script: '''
-            echo "-Puname=$USERNAME -Dpass=$PASSWORD"
             cd wordCount && ls -la
             '''
           }
