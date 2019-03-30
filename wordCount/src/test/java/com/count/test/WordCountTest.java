@@ -74,8 +74,10 @@ public class WordCountTest {
 	
 	@Test
   	public void testSafeCredential() {
-    		System.out.println("Username is " + System.getProperty("uName"));
-    		System.out.println("Passcode is " + System.getProperty("pswd"));
+    		System.out.println("Username is " + System.getProperty("uname"));
+    		System.out.println("Passcode is " + System.getProperty("pass"));
+		//systemProperty "uName", System.getProperty("uname")
+    		//systemProperty "pswd", System.getProperty("pass")
   }
 
 }
