@@ -24,7 +24,7 @@ pipeline {
           withCredentials([usernamePassword(credentialsId: 'restEndpoint', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
             sh returnStdout: true, script: '''
             echo "-Puname=$USERNAME -Dpass=$PASSWORD"
-            cd wordCount && ls -la && chmod +x gradlew && ./gradlew --refresh-dependencies &&  ./gradlew test -Duname=$USERNAME -Dpass=$PASSWORD
+            cd wordCount && ls -la && chmod +x gradlew && ./gradlew --refresh-dependencies && ./gradlew clean build &&  ./gradlew test -Duname=$USERNAME -Dpass=$PASSWORD
             '''
           }
         }
