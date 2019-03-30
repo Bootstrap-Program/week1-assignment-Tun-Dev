@@ -36,6 +36,7 @@ pipeline {
           sh 'echo "***************REPORT*****************"'
            sh 'cd wordCount && ls -la build/reports/tests/**'
           //sh 'cd wordCount && ls -la build/test-results/**'
+          junit '**/test-results/test/*.xml'
         }
      }
       
