@@ -18,9 +18,10 @@ dependencies {
 tasks.withType(Test) {
 
     //for -P
-    systemProperty "uName", project.getProperty("uname")
+    //systemProperty "uName", project.getProperty("uname")
 
     //for -D
+    systemProperty "uName", System.getProperty("uname")
     systemProperty "pswd", System.getProperty("pass")
     
     println "********Print Creds****************"
