@@ -8,9 +8,7 @@ pipeline {
                     userRemoteConfigs: 
                     [[credentialsId: 'gitHubCreds', url: 'https://github.com/gideonaina/wordCount.git']]])
           
-            sh returnStdout: true, script: '''
-            cd wordCount && ls -la
-            '''
+            sh 'cd wordCount && ls -la'
         }
       }
       stage('Creds') {
