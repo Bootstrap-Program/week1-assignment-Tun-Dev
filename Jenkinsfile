@@ -34,9 +34,7 @@ pipeline {
         steps {
 
           sh 'echo "***************REPORT*****************"'
-           sh returnStdout: true, script: '''
-            cd wordCount && ls -la
-            '''
+           sh 'cd wordCount && ls -la'
         }
      }
       
