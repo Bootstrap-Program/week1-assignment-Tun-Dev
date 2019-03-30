@@ -11,7 +11,7 @@ pipeline {
       }
       stage('Creds') {
         steps {
-          sh 'echo "%%%%%%%%%%CREDS%%%%%%%%%%%"
+          sh 'echo "%%%%%%%%%%CREDS%%%%%%%%%%%"'
           //withCredentials([usernamePassword(credentialsId: 'restEndpoint', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
         //sh returnStdout: true, script: '''
         //curl -X POST https://restful-booker.herokuapp.com/auth -H "Content-Type: application/json" -d \'{ "username" : $USERNAME, "password" : $PASSWORD}"}\'
