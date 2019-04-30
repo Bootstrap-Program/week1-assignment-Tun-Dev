@@ -1,3 +1,6 @@
+#Sample Project.
+
+This is simple java app I use to test out some quick CI/CD hacks to typify a typical CI/CD workflow
 
 ******************
 The project is a Gradle project which uses Gradle Wrapper
