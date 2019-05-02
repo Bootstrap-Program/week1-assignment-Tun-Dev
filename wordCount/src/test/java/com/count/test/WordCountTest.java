@@ -71,6 +71,7 @@ public class WordCountTest {
 	}
 	
 	@Test
+	@BugId(bugId= {"WC-0001"})
   	public void testSafeCredential() {
     		System.out.println("Username is " + System.getProperty("uName"));
     		System.out.println("Passcode is " + System.getProperty("pswd"));
